@@ -5,8 +5,12 @@
 This project makes use of what is probably Python's least used feature--sets--in order to expand the game into an infinite scope. 
 
 ## Instructions
-To run this, you need pygame and Python 3
+To run this, you need Python3 and pygame
 
-To run, just run 
+To run, just input 
 
-`python3 src/main.py`
+`python3 src/main.py`, followed by the rule (for example, 'conway', 'highlife', or 'B45/S35')
+
+For example:
+
+`python3 src/main.py highlife`
