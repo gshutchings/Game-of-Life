@@ -2,7 +2,7 @@ from game_logic import Game # For the rules of the game
 import pygame # For the window
 import random # For dev commands, since I get bored easily
 
-TOTAL_PIXEL_SIZE = 5
+TOTAL_PIXEL_SIZE = 4
 PIXEL_BORDER_SIZE = 1
 
 BACKGROUND_COLOR = (80, 80, 80)

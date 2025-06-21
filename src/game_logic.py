@@ -57,7 +57,7 @@ class Game:
         neighbor_count = defaultdict(int) # Running total of how many neighbors a potential cell has
         for (pt1, pt2) in self.points:
             for dx, dy in [[-1, 1], [0, 1], [1, 1],
-                            [-1, 0],         [1, 0],
+                            [-1, 0], [0, 0], [1, 0],  # Includes itself in case it has no neighbors and self.s includes 0
                             [-1, -1],[0, -1],[1, -1]]:
                 neighbor = (pt1 + dx, pt2 + dy)
                 possible_points.add(neighbor)
@@ -67,11 +67,14 @@ class Game:
         new_points = set()
         for point in possible_points:
             if (point in self.points):
-                if neighbor_count[point] in self.s:
+                if neighbor_count[point] - 1 in self.s:
                     new_points.add(point)
             else:
                 if neighbor_count[point] in self.b:
                     new_points.add(point)
+        for point in self.points:
+            if neighbor_count[point] in self.s:
+                new_points.add(point)
         
         self.points = new_points
         return
